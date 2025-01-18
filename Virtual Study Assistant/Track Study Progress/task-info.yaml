@@ -1,0 +1,23 @@
+type: edu
+files:
+  - name: study_assistant.py
+    visible: true
+    learner_created: false
+  - name: test/__init__.py
+    visible: true
+    learner_created: false
+  - name: test/tests.py
+    visible: false
+    learner_created: false
+  - name: __init__.py
+    visible: false
+    learner_created: false
+  - name: tests.py
+    visible: false
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/51896#comment
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Thu, 16 Jan 2025 21:33:42 UTC"
+record: 3

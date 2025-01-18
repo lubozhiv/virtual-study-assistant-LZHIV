@@ -1,0 +1,74 @@
+hyperskill_project:
+  id: 506
+  ide_files: https://hyperskill.org/api/projects/506/additional-files/additional_files.json
+  is_template_based: false
+  use_ide: true
+  environment: unittest
+update_date: "Sat, 18 Jan 2025 07:31:00 UTC"
+stages:
+  - id: 2981
+    step: 51830
+    is_completed: true
+  - id: 2991
+    step: 51895
+    is_completed: true
+  - id: 2992
+    step: 51896
+    is_completed: true
+  - id: 2995
+    step: 51925
+    is_completed: true
+  - id: 2994
+    step: 51906
+    is_completed: true
+topics:
+  0:
+    - title: Introduction to Python
+      theory_id: 47352
+    - title: Multi-line programs
+      theory_id: 47555
+    - title: Taking user's input
+      theory_id: 47680
+    - title: PyCharm basics
+      theory_id: 6193
+    - title: Running Python applications in PyCharm
+      theory_id: 19153
+    - title: Debugging Python applications in PyCharm
+      theory_id: 19163
+    - title: Basic data types
+      theory_id: 47516
+    - title: Variables
+      theory_id: 47536
+    - title: "Integer arithmetic: basic operations"
+      theory_id: 47564
+    - title: Dictionary
+      theory_id: 6481
+  1:
+    - title: Program with numbers
+      theory_id: 47734
+    - title: "Integer arithmetic: special operations"
+      theory_id: 47917
+    - title: Quotes and multi-line strings
+      theory_id: 5814
+    - title: String formatting
+      theory_id: 6037
+  3:
+    - title: General limitations of LLMs
+      theory_id: 43801
+    - title: Introduction to Prompt Engineering
+      theory_id: 43279
+    - title: Computer algorithms
+      theory_id: 16547
+    - title: Introduction to LLMs
+      theory_id: 51833
+    - title: Intro to Machine Learning
+      theory_id: 10403
+    - title: Libraries
+      theory_id: 8504
+    - title: Frameworks
+      theory_id: 6701
+    - title: Introduction to API
+      theory_id: 17007
+  4:
+    - title: "PEP 8: Coding style guide"
+      theory_id: 47499

@@ -1,0 +1,22 @@
+<div class="step-text">
+<h5 id="theory">Theory</h5><p>Now that you’ve tracked your progress, it’s time to make your first call to a real LLM and get some encouragement! Motivational messages can help you stay focused and energized, especially when tackling a challenging study plan. In this stage, you’ll interact with an AI to generate personalized message based on your progress.</p><p>To achieve this, you’ll need to interact with the Hugging Face (HF) API. Hugging Face provides a variety of AI-powered tools and models, and accessing them requires creating an API key.</p><p>Follow these steps to get started:</p><ol><li><p>Visit <a href="https://huggingface.co/" rel="noopener noreferrer nofollow" target="_blank">Hugging Face</a> and create an account if you don’t already have one.</p></li><li><p>After logging in, go to your profile (in the top-right corner) and navigate to "<strong>Access Tokens"</strong>.</p></li><li><p>Click on "<strong>+ Generate New Token" </strong>button, give it a name, and copy the generated API key.</p></li><li><p>During key creation, choose "<strong>Make calls to the serverless Inference API" </strong>option from "<strong>Inference" </strong>group</p></li><li><p>Create a <code class="language-python">.env</code> file in your project directory in PyCharm IDE and paste this token</p></li><li><p>To read token from secured file, you can use the following code snipped:</p><pre><code class="language-python">with open('.env', 'r') as fp:
+    HF_API_KEY = fp.read().strip()</code></pre></li></ol><p>This API key will allow your code to securely interact with the Hugging Face API without hard-coding sensitive information into your script</p><h5 id="description">Description</h5><div class="alert alert-danger"><p><strong>Important Note:</strong> ⚠️ This project involves the use of <strong>private keys</strong> and <code class="language-python">.env</code> files. Please ensure you <strong>DO NOT expose your keys</strong> by hardcoding them directly into the solution. Instead, always reference them securely from your <code class="language-python">.env</code> file. Additionally, <strong>do not include your </strong><code class="language-python">.env</code> file in your project submission. Double-check your code for any <strong>accidental key exposure</strong> before submission. If sharing code snippets, <strong>mask sensitive values</strong>.</p></div><p>To get your first response from LLM, you’ll use the <code class="language-python">InferenceClient</code> from the <code class="language-python">huggingface_hub</code> Python library. For now, we encourage you to explore how this model works and experiment with its parameters. Use the provided code snippet to make your first API call and get hands-on experience with the process.</p><pre><code class="language-python">from huggingface_hub import InferenceClient
+
+client = InferenceClient(token=HF_API_KEY)
+prompt = """
+I have to prepare for my {subjects} exams. I've completed {completeness:.2f}% of my curriculum. My motivation should be:
+""".format(
+subjects=','.join(subjects.keys()), 
+completeness=completeness
+)
+
+response = client.text_generation(
+    prompt=prompt,
+    model="TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    temperature=0.01,
+    max_new_tokens=50,
+    seed=42,
+    return_full_text=True,
+) 
+print(response)</code></pre><p>Here’s a brief explanation of key parameters you can explore:</p><ul><li><p><strong>Temperature</strong>: Controls the randomness of the output. Lower values make the output more deterministic, while higher values allow for more "creativity"</p></li><li><p><strong>Prompt</strong>: The input text or query sent to the model, guiding the AI on what answer you want to produce</p></li><li><p><strong>Model</strong>: The specific pre-trained AI model being used. In this example, we're using one of the smallest LLMs that could produce an interesting result in the shortes time</p></li></ul><p>Please, take into account that it's not comparable to the larges model like OpenAI's GPT-4 but just needed to explore capabilities of open-source models.</p><h5 id="objectives">Objectives</h5><ul><li><p>Prepare the data (study plan and progress percentage) for API interaction</p></li><li><p>Register on Hugging Face, generate an API key, and save it in a <code class="language-python">.env</code> file</p></li><li><p>Make an API call to generate a motivational message using the <code class="language-python">InferenceClient</code></p></li><li><p>Display the returned message to the user</p></li></ul><p></p>
+</div>
